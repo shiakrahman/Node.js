@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "971b9656-22be-494f-bd82-26136d6c30ac",
+		"name": "Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"posham1234\",\n  \"email\": \"Sandeep@example12345.com\",\n  \"password\": \"password44\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/auth/register"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"Sandeep@example12345.com\",\n    \"password\": \"password44\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "user_update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmJjOWY5M2Y2ZDdmMDkzMzUyNjM2NSIsImlhdCI6MTcyMzU4MzAwNCwiZXhwIjoxNzI2MTc1MDA0fQ.ZKjnM7u4GLJUPvDNL-Lq1Js4uIfkxjQRGRpc6kpvJEw"
+					}
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmJiOTQxNDQ0NDllZjUzMzJlYTVmNWYiLCJpYXQiOjE3MjM1NjkyOTUsImV4cCI6MTcyMzU3Mjg5NX0.pUVMkHepg6q8IhHBmGA_RjXdHISzgS8BboQKim0nHeQ",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userId\": \"66bbbe7da00264fd14e5a7e6\",\n  \"username\": \"posham143\",\n  \"email\": \"Sandeep@example123456.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/user/update"
+			},
+			"response": []
+		},
+		{
+			"name": "user_delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmJjOWY5M2Y2ZDdmMDkzMzUyNjM2NSIsImlhdCI6MTcyMzU4MzAwNCwiZXhwIjoxNzI2MTc1MDA0fQ.ZKjnM7u4GLJUPvDNL-Lq1Js4uIfkxjQRGRpc6kpvJEw"
+					}
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmJiOTQxNDQ0NDllZjUzMzJlYTVmNWYiLCJpYXQiOjE3MjM1NjkyOTUsImV4cCI6MTcyMzU3Mjg5NX0.pUVMkHepg6q8IhHBmGA_RjXdHISzgS8BboQKim0nHeQ",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"url": "http://localhost:5000/api/user/delete"
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "media_upload",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmJjNTZlOGZjNWY5YTdjYWYxZGM3YyIsImlhdCI6MTcyMzU4MTgxMSwiZXhwIjoxNzI2MTczODExfQ.pNUE3pSyWvlr3tdSxNrPWN5TplUjrplWEPl5h_QRjZE"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "description",
+							"value": "Test Media Description",
+							"type": "text"
+						},
+						{
+							"key": "userId",
+							"value": "66bbc9f93f6d7f0933526365",
+							"type": "text"
+						},
+						{
+							"key": "mediaFile",
+							"type": "file",
+							"src": "/Users/shaik/Desktop/social-media-platform/read.txt"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/media/upload"
+			},
+			"response": []
+		},
+		{
+			"name": "comment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmJjNTZlOGZjNWY5YTdjYWYxZGM3YyIsImlhdCI6MTcyMzU4MTgxMSwiZXhwIjoxNzI2MTczODExfQ.pNUE3pSyWvlr3tdSxNrPWN5TplUjrplWEPl5h_QRjZE"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"66bbc9f93f6d7f0933526365\",\n    \"mediaId\": \"66bbca8f3f6d7f0933526371\",\n    \"comment\": \"This is a test comment\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/media/comment/66bbca8f3f6d7f0933526371"
+			},
+			"response": []
+		},
+		{
+			"name": "like",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmJjNTZlOGZjNWY5YTdjYWYxZGM3YyIsImlhdCI6MTcyMzU4MTgxMSwiZXhwIjoxNzI2MTczODExfQ.pNUE3pSyWvlr3tdSxNrPWN5TplUjrplWEPl5h_QRjZE"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjZiNTAwMTU3NGNjN2IwYzhiMDU0NTNlIiwicm9sZSI6Im5vcm1hbCJ9LCJpYXQiOjE3MjMxMzgxMDAsImV4cCI6MTcyMzE0MTcwMH0.-sSoxA6Qkdo1JNo2R4RB31KPf6Zpj1RRCx5QFFC2his",
+						"type": "default"
+					}
+				],
+				"url": "http://localhost:5000/api/media/like/66bbca8f3f6d7f0933526371"
+			},
+			"response": []
+		},
+		{
+			"name": "delete_media",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmJjNTZlOGZjNWY5YTdjYWYxZGM3YyIsImlhdCI6MTcyMzU4MTgxMSwiZXhwIjoxNzI2MTczODExfQ.pNUE3pSyWvlr3tdSxNrPWN5TplUjrplWEPl5h_QRjZE"
+					}
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjZiNTAwMTU3NGNjN2IwYzhiMDU0NTNlIiwicm9sZSI6Im5vcm1hbCJ9LCJpYXQiOjE3MjMxMzgyNjMsImV4cCI6MTcyMzE0MTg2M30.JcaunVNWcvwdPtmEkUQ-EI05fqFAGZYj7Bs_2YbBnzo",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": "http://localhost:5000/api/media/delete/66bbca8f3f6d7f0933526371"
+			},
+			"response": []
+		}
+	]
+}
